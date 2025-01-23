@@ -1,7 +1,7 @@
 
 # To-Do List using React
 
-A simple to-do list application built with HTML, CSS, JavaScript, React.js, Node.js, Express, and MongoDB. This app allows users to **create** and **delete** tasks, with tasks stored persistently in MongoDB.
+A simple to-do list application built with HTML, CSS, JavaScript, React.js, etc. This app allows users to **create** and **delete** tasks, with tasks stored persistently in MongoDB.
 
 ## Features
 
@@ -12,10 +12,10 @@ A simple to-do list application built with HTML, CSS, JavaScript, React.js, Node
 
 ## Tech Stack
 
-- **Frontend**: React.js, HTML, CSS
+- **Frontend**: React.js, HTML, CSS, JavaScript
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
-- **Others**: JavaScript, RESTful APIs
+- **Others**:  RESTful APIs, Material UI
 
 ## Installation
 
@@ -31,7 +31,7 @@ cd todo-list-app
 
 ### 2. Install dependencies
 
-Install the necessary Node modules with NPM. Make sure you have installed Node JS already on your system. If not, click [here](https://nodejs.org/en/download) to download latest Node LTS.
+Install the necessary Node modules with NPM. Make sure you have installed Node JS already on your system. If not, click [here](https://nodejs.org/en/download) to download the latest Node LTS.
 
 ```bash
   npm install (or) npm i
@@ -45,7 +45,7 @@ Install the necessary Node modules with NPM. Make sure you have installed Node J
 
 ### 4. Start the back-end server
 
-open new terminal change the directory to backend
+Open a new terminal and change the directory to the backend.
 
 ```bash
   cd backend
