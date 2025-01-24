@@ -7,8 +7,10 @@ import axios from "axios";
 
 function App() {
   const [data, setData] = useState([]);
+  const [editNote, setEditNote] = useState({});
 
   // Fetch notes from the backend when the component mounts
+
   useEffect(() => {
     async function fetchNotes() {
       try {
@@ -20,7 +22,7 @@ function App() {
     }
 
     fetchNotes();
-  }, []);
+  }, [data]);
 
   // Add a new note
   async function addNotes(newNotes) {
@@ -39,12 +41,30 @@ function App() {
     }
   }
 
+  // Get a note by ID
+  async function note(id) {
+    try {
+      const response = await axios.get(`http://localhost:5000/api/notes/${id}`);
+      setEditNote(response.data);
+    } catch (error) {
+      console.error("Error deleting note:", error);
+    }
+  }
+
+  // Edit a note
+  async function updateNote(...notes) {
+    try {
+      await axios.patch(`http://localhost:5000/api/notes/edit/${notes[1]}`, notes[0]);
+      setEditNote({});
+    } catch (error) {
+      console.error("Error editing note:", error);
+    }
+  }
+
   // Delete a note
   async function deleteNotes(id) {
     try {
       await axios.delete(`http://localhost:5000/api/notes/${id}`);
-      const response = await axios.get("http://localhost:5000/api/notes");
-      setData(response.data);
     } catch (error) {
       console.error("Error deleting note:", error);
     }
@@ -53,10 +73,11 @@ function App() {
   return (
     <div>
       <Header />
-      <CreateArea addNote={addNotes} />
+      <CreateArea addNote={addNotes} note={editNote} updateNote={updateNote}/>
       {data.map((item, index) => (
         <Note
           key={item._id}
+          editNote={note}
           deleteNote={deleteNotes}
           id={item._id}
           title={item.title}
