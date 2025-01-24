@@ -1,10 +1,11 @@
 # To-Do List using React
 
-A simple to-do list application built with HTML, CSS, JavaScript, React.js, etc. This app allows users to **create** and **delete** tasks, with tasks stored persistently in MongoDB.
+A simple to-do list application built with HTML, CSS, JavaScript, React.js, etc. This app allows users to **create**, **update** and **delete** tasks, with tasks stored persistently in MongoDB.
 
 ## Features
 
 - Create new tasks for your to-do list
+- update your existing to-do list on database
 - Delete tasks from the list
 - Persistent storage with MongoDB
 - Backend API built with Node.js and Express
